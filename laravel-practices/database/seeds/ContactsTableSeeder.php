@@ -11,24 +11,29 @@ class ContactsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-        # Lets create 150 random phones
-//       factory(\App\Contact::class, 25)->create([
-//            'user_id' => $this->getRandomUserId()
-//        ]);
-//    }
-//
-//
-//    private function getRandomUserId() {
-//        $user = \App\User::inRandomOrder()->first();
-//        return $user->id;
-//
-
         factory(App\Contact::class, 50)->create();
     }
 
 
 
+// If try to create real data by using database seeder
+    /*
+        public function createMediaTypes()
+        {
+            $media_types = [
+                'Audio',
+                'Video',
+                'Image',
+            ];
+
+            foreach ($media_types as $type) {
+                MediaType::create([
+                    'label' => $type,
+                    'name' => str_slug($type),
+                ]);
+            }
+        }
+    */
 
 
 }
