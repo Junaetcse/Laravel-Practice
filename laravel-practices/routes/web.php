@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/send/email', 'HomeController@mail');
+Route::get('/sql', 'HomeController@sql');
+
