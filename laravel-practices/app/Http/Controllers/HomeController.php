@@ -23,10 +23,34 @@ class HomeController extends Controller
 
     public function sql(){
 
-    	$users = DB::table('users')->get();
-    	// $user = DB::table('users')->where('name','Friedrich Bergnaum')->first();
-    	// return $user->name;
-    	$user = DB::table('users')->where('name','Friedrich Bergnaum')->value('email');
-    	return $user;
+       // $this->basicSql();
+        $this->sqlPart2();
     }
+
+
+
+    public function basicSql(){
+        DB::table('users')->get();
+        $user = DB::table('users')->where('name','Friedrich Bergnaum')->first();
+        DB::table('users')->where('name','Friedrich Bergnaum')->value('email');
+        DB::table('users')->orderBy('id')->chunk(20,function ($users){
+            foreach ($users as $user ){
+                return $user;
+            }
+        });
+    }
+
+
+    public function sqlPart2(){
+       DB::table('users')->where('email','frosenbaum@example.org')->exists();
+        $user = DB::table('users')->select('name', 'email as user_emial')->get();
+        $dis = DB::table('users')->distinct()->get();
+        $query = DB::table('users')->select('name');
+        $dd = $query->addSelect('email')->get();
+        
+       // dump($query);
+        return $dis;
+
+    }
+
 }
