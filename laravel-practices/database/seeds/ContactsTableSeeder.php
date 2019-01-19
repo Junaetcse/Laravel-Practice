@@ -12,6 +12,7 @@ class ContactsTableSeeder extends Seeder
     public function run()
     {
         factory(App\Contact::class, 50)->create();
+        factory(App\Activity::class, 50)->create();
     }
 
 

@@ -30,3 +30,12 @@ $factory->define(App\Contact::class, function (Faker $faker) {
         'number' => $faker->sentence, // secret
     ];
 });
+
+$factory->define(\App\Activity::class, function (Faker $faker){
+    return [
+        'contact_id' => \App\Contact::inRandomOrder()->first()->id,
+        'cell_number' => $faker->e164PhoneNumber,
+        'status' => $faker->sentence(5),
+        'ranking' => $faker->numberBetween($min = 1, $max = 5)
+    ];
+});

@@ -16,5 +16,8 @@ class Contact extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function activity(){
+        return $this->hasOne(Activity::class);
+    }
 
 }
