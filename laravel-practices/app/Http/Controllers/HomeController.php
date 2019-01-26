@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use App\Mail\SendMailable;
+use App\Notifications\LessonUpdate;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -86,4 +89,12 @@ class HomeController extends Controller
         
     }
 
+
+
+    public function mailNotification()
+    {
+        $users = User::first();
+        $contact = Contact::first();
+        $users->notify(new LessonUpdate($contact));
+    }
 }
