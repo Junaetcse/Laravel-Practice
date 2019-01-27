@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Contact;
 use App\Mail\SendMailable;
 use App\Notifications\LessonUpdate;
+use App\Notifications\SmsNotification;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -103,5 +104,14 @@ class HomeController extends Controller
             $user->notify(new LessonUpdate($contact));
         }
 
+        $user = new User();
+        $user->phone_number= '+8801767590626';   // Don't forget specify country code.
+        $user->notify(new SmsNotification());
+
     }
+
+//    public function routeNotificationForNexmo($notification)
+//    {
+//        return "";
+//    }
 }

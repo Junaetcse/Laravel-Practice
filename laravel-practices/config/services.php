@@ -40,4 +40,10 @@ return [
         ],
     ],
 
+    'nexmo' => [
+        'key' => env('d5b64709'),
+        'secret' => env('FAUCj3vXcS75vHAT'),
+        'sms_from' => '15556666666',
+    ],
+
 ];
