@@ -93,8 +93,15 @@ class HomeController extends Controller
 
     public function mailNotification()
     {
-        $users = User::first();
-        $contact = Contact::first();
-        $users->notify(new LessonUpdate($contact));
+        // $users = User::where('email','doris53@example.com')->first();
+        //$users = User::where('name','like','%A%')->get();
+        //  App\User::where('name','like','%A%')->count();
+
+        $users = User::whereBetween('id', [5,10])->get();;
+        foreach ($users as $user){
+            $contact = Contact::first();
+            $user->notify(new LessonUpdate($contact));
+        }
+
     }
 }
