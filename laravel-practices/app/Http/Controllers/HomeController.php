@@ -6,6 +6,7 @@ use App\Contact;
 use App\Mail\SendMailable;
 use App\Notifications\LessonUpdate;
 use App\Notifications\SmsNotification;
+use App\Post;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -109,9 +110,8 @@ class HomeController extends Controller
         $user->notify(new SmsNotification());
 
     }
-
-//    public function routeNotificationForNexmo($notification)
-//    {
-//        return "";
-//    }
+    
+    public function softDeleteExample(){
+        (new Post())->softDelete();
+    }
 }
