@@ -39,3 +39,12 @@ $factory->define(\App\Activity::class, function (Faker $faker){
         'ranking' => $faker->numberBetween($min = 1, $max = 5)
     ];
 });
+
+
+$factory->define(\App\Post::class, function (Faker $faker){
+    return [
+        'user_id' => \App\User::inRandomOrder()->first()->id,
+        'name' => $faker->name,
+        'description' => $faker->sentence(10)
+    ];
+});

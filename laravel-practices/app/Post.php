@@ -25,4 +25,11 @@ class Post extends Model
         $post2= Post::find(1)->forceDelete();
      //  dd($post1);
     }
+
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+
 }

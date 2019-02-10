@@ -13,6 +13,7 @@ class ContactsTableSeeder extends Seeder
     {
         factory(App\Contact::class, 50)->create();
         factory(App\Activity::class, 50)->create();
+        factory(\App\Post::class, 40)->create();
     }
 
 

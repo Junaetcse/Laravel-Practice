@@ -20,5 +20,6 @@ Route::get('/sql', 'HomeController@sql');
 Route::get('/notification', 'HomeController@mailNotification');
 Route::get('/collection', 'LaravelCollection@index');
 Route::get('/soft-delete', 'HomeController@softDeleteExample');
+Route::get('/relationship', 'RelationController@ormRelation');
 
 
