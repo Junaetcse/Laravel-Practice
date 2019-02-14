@@ -23,3 +23,7 @@ Route::get('/soft-delete', 'HomeController@softDeleteExample');
 Route::get('/relationship', 'RelationController@ormRelation');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
