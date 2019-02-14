@@ -26,6 +26,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <a href="{{ url('/name') }}">Name</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,6 +35,11 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
+                        <li class="nav-item" style="margin-left: 30px">
+                            @can('admin-only',auth()->user())
+                                <a href="#">  <u><b>You are Admin</b></u> </a>
+                            @endcan
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
