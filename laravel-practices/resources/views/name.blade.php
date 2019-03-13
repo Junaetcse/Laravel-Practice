@@ -1,4 +1,3 @@
 <div>
-    Hi, This is : {{ $nameb }}
-    Email is {{$email}}
+    Hi, This is :
 </div>

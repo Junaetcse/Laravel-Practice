@@ -36,8 +36,10 @@
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item" style="margin-left: 30px">
+                            <h6>{{$fullusername}}</h6>
                             @can('admin-only',auth()->user())
                                 <a href="#">  <u><b>You are Admin</b></u> </a>
+
                             @endcan
                         </li>
                     </ul>

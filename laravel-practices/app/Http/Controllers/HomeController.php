@@ -24,7 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $fullusername = getUserFullName(auth()->user()->id);
+
+        return view('home', compact('fullusername'));
     }
 
 
